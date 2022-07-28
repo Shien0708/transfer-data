@@ -13,6 +13,10 @@
 		64B2F4E428924F9F0047C857 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B2F4E228924F9F0047C857 /* Main.storyboard */; };
 		64B2F4E628924FA10047C857 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64B2F4E528924FA10047C857 /* Assets.xcassets */; };
 		64B2F4E928924FA10047C857 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64B2F4E728924FA10047C857 /* LaunchScreen.storyboard */; };
+		64B2F4F1289252E60047C857 /* UnwindEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2F4F0289252E60047C857 /* UnwindEmojiViewController.swift */; };
+		64B2F4F3289258350047C857 /* ClosureEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2F4F2289258350047C857 /* ClosureEmojiViewController.swift */; };
+		64B2F4F528925C570047C857 /* DelegateEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2F4F428925C570047C857 /* DelegateEmojiViewController.swift */; };
+		64B2F4F7289264150047C857 /* NotificationEmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B2F4F6289264150047C857 /* NotificationEmojiViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		64B2F4E528924FA10047C857 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64B2F4E828924FA10047C857 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64B2F4EA28924FA10047C857 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64B2F4F0289252E60047C857 /* UnwindEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnwindEmojiViewController.swift; sourceTree = "<group>"; };
+		64B2F4F2289258350047C857 /* ClosureEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureEmojiViewController.swift; sourceTree = "<group>"; };
+		64B2F4F428925C570047C857 /* DelegateEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateEmojiViewController.swift; sourceTree = "<group>"; };
+		64B2F4F6289264150047C857 /* NotificationEmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEmojiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +67,11 @@
 				64B2F4DC28924F9F0047C857 /* AppDelegate.swift */,
 				64B2F4DE28924F9F0047C857 /* SceneDelegate.swift */,
 				64B2F4E028924F9F0047C857 /* ViewController.swift */,
+				64B2F4F6289264150047C857 /* NotificationEmojiViewController.swift */,
+				64B2F4F0289252E60047C857 /* UnwindEmojiViewController.swift */,
 				64B2F4E228924F9F0047C857 /* Main.storyboard */,
+				64B2F4F428925C570047C857 /* DelegateEmojiViewController.swift */,
+				64B2F4F2289258350047C857 /* ClosureEmojiViewController.swift */,
 				64B2F4E528924FA10047C857 /* Assets.xcassets */,
 				64B2F4E728924FA10047C857 /* LaunchScreen.storyboard */,
 				64B2F4EA28924FA10047C857 /* Info.plist */,
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64B2F4F528925C570047C857 /* DelegateEmojiViewController.swift in Sources */,
+				64B2F4F3289258350047C857 /* ClosureEmojiViewController.swift in Sources */,
 				64B2F4E128924F9F0047C857 /* ViewController.swift in Sources */,
 				64B2F4DD28924F9F0047C857 /* AppDelegate.swift in Sources */,
+				64B2F4F1289252E60047C857 /* UnwindEmojiViewController.swift in Sources */,
 				64B2F4DF28924F9F0047C857 /* SceneDelegate.swift in Sources */,
+				64B2F4F7289264150047C857 /* NotificationEmojiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

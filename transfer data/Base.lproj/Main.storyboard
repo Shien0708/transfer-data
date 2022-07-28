@@ -1,24 +1,359 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0RD-tn-ydz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="transfer_data" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xr-k5-cym">
+                                <rect key="frame" x="92" y="325" width="231" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="使用 unwind segue 回傳資料"/>
+                                <connections>
+                                    <segue destination="B24-W0-etE" kind="show" id="MOu-e1-8mM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2E-wx-2Hl">
+                                <rect key="frame" x="133" y="170" width="149" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4e-ss-ub6">
+                                <rect key="frame" x="92" y="458" width="231" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="使用 closure 回傳資料">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.32879750639999999" green="1" blue="0.38331456219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="n2y-gj-0Sa" kind="show" destinationCreationSelector="showClosureView:" id="Tll-6D-9BN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6J0-e3-8FS">
+                                <rect key="frame" x="92" y="592" width="231" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="使用 delegate 回傳資料">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="0kb-CC-HqO" kind="show" destinationCreationSelector="showDelegateView:" id="uWW-v7-47u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b7-BM-i7O">
+                                <rect key="frame" x="92" y="707" width="231" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="使用 notification 回傳資料">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="2nn-nD-ebU" kind="show" id="mv1-wf-m8R"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Fe5-tF-uu1"/>
+                    <connections>
+                        <outlet property="emojiLabel" destination="p2E-wx-2Hl" id="hjd-dY-PT7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1087" y="-404"/>
+        </scene>
+        <!--Closure Emoji View Controller-->
+        <scene sceneID="Ayk-cl-ZOV">
+            <objects>
+                <viewController id="n2y-gj-0Sa" customClass="ClosureEmojiViewController" customModule="transfer_data" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UWw-82-VAp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-kH-gUj">
+                                <rect key="frame" x="134" y="182" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😀">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" red="0.32879750639999999" green="1" blue="0.38331456219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="AoK-GY-EHi"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="cN8-4M-v0g"/>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="khj-6s-KsJ"/>
+                                    <action selector="unwind:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="lie-CV-YIr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3v-vO-qPw">
+                                <rect key="frame" x="134" y="383" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="🥲">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" red="0.32879750639999999" green="1" blue="0.38331456219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="2f9-DG-0hg"/>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="n1C-vm-Sbu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXo-CF-gqc">
+                                <rect key="frame" x="134" y="603" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😎">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" red="0.32879750639999999" green="1" blue="0.38331456219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="gVS-Zz-9Cj"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="tlQ-Nm-RRh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qcm-RK-1Hd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WsN-2n-kqJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WOa-sD-tUP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="267"/>
+        </scene>
+        <!--Delegate Emoji View Controller-->
+        <scene sceneID="IBe-NO-Cuq">
+            <objects>
+                <viewController id="0kb-CC-HqO" customClass="DelegateEmojiViewController" customModule="transfer_data" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dgr-YY-QmG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnl-kp-Tbz">
+                                <rect key="frame" x="134" y="182" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😀">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="41B-xc-dke"/>
+                                    <action selector="choose:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="4Xk-BG-3us"/>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="8bx-h5-SHF"/>
+                                    <action selector="choose:" destination="0kb-CC-HqO" eventType="touchUpInside" id="uHw-Pm-w50"/>
+                                    <action selector="unwind:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="xZB-qG-0Ko"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDd-qU-f2A">
+                                <rect key="frame" x="134" y="383" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="🥲">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="ba1-Sr-2x9"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="p43-qS-JpF"/>
+                                    <action selector="choose:" destination="0kb-CC-HqO" eventType="touchUpInside" id="vdg-Zu-422"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRs-e4-jKF">
+                                <rect key="frame" x="134" y="603" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😎">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="0kb-CC-HqO" eventType="touchUpInside" id="3DU-L3-55o"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="4mR-yq-IcQ"/>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="rQT-eo-bUv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="neW-vt-VBx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vgR-0P-nLG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyC-Nn-yaa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="940"/>
+        </scene>
+        <!--Notification Emoji View Controller-->
+        <scene sceneID="iDw-hF-y0V">
+            <objects>
+                <viewController id="2nn-nD-ebU" customClass="NotificationEmojiViewController" customModule="transfer_data" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ox-j8-h0c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D60-Fi-PRI">
+                                <rect key="frame" x="134" y="182" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😀">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="Ex4-bx-gtA" eventType="touchUpInside" id="7Z7-bf-eT8"/>
+                                    <action selector="choose:" destination="2nn-nD-ebU" eventType="touchUpInside" id="9GB-S6-pIG"/>
+                                    <action selector="choose:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="Vht-ub-LMB"/>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="d0r-Gy-Bj8"/>
+                                    <action selector="choose:" destination="0kb-CC-HqO" eventType="touchUpInside" id="eMr-qF-Qj9"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="hol-hW-8No"/>
+                                    <action selector="unwind:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="TPi-kV-WN6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUA-c2-jmp">
+                                <rect key="frame" x="134" y="383" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="🥲">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="5k6-PZ-HVr"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="7lo-fC-83P"/>
+                                    <action selector="choose:" destination="2nn-nD-ebU" eventType="touchUpInside" id="Xic-Yo-WVy"/>
+                                    <action selector="choose:" destination="0kb-CC-HqO" eventType="touchUpInside" id="fQW-8s-ced"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5g-95-QHd">
+                                <rect key="frame" x="134" y="603" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😎">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="2nn-nD-ebU" eventType="touchUpInside" id="FfD-de-XIS"/>
+                                    <action selector="choose:" destination="n2y-gj-0Sa" eventType="touchUpInside" id="UQA-MJ-iKV"/>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="yDY-9D-e52"/>
+                                    <action selector="choose:" destination="0kb-CC-HqO" eventType="touchUpInside" id="yxc-X5-rkb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UO3-ts-w8q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cWi-W8-4YC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="znj-zs-0M3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ex4-bx-gtA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="1586"/>
+        </scene>
+        <!--Unwind Emoji View Controller-->
+        <scene sceneID="tKL-wK-JJU">
+            <objects>
+                <viewController id="B24-W0-etE" customClass="UnwindEmojiViewController" customModule="transfer_data" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zVG-yU-iAy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ixe-d0-NDY">
+                                <rect key="frame" x="134" y="204" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😀">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="CJU-1X-RQk"/>
+                                    <action selector="choose:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="iMg-0Z-d6X"/>
+                                    <action selector="unwind:" destination="JU2-Qg-iTY" eventType="touchUpInside" id="BpA-BO-mII"/>
+                                    <segue destination="JU2-Qg-iTY" kind="unwind" unwindAction="unwind:" id="4VE-d4-EYa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDw-eF-6Pd">
+                                <rect key="frame" x="134" y="405" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="🥲">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="QfM-Do-IGM"/>
+                                    <segue destination="JU2-Qg-iTY" kind="unwind" unwindAction="unwind:" id="85x-fa-CJS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yS3-IN-Bdt">
+                                <rect key="frame" x="134" y="625" width="146" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="😎">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="50"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="choose:" destination="B24-W0-etE" eventType="touchUpInside" id="vDK-R7-l6b"/>
+                                    <segue destination="JU2-Qg-iTY" kind="unwind" unwindAction="unwind:" id="OHd-Yd-0Qc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nbj-9O-Ncy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sOu-Mv-KK5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PML-Wv-ihC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="JU2-Qg-iTY" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1787" y="-404"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i7t-Zc-kRU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0RD-tn-ydz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qy8-0F-uBc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VCU-IJ-pGn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSK-De-Jmz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="-404"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
